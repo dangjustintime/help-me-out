@@ -6,7 +6,7 @@ const mongoose = require("mongoose");
 const mongoUri =  process.env.MONGODB_URI || 'mongodb://localhost:27017/grocery_app_dev';
 
 app.get("/", (request, response) => {
-    response.send("hello");
+    response.send("working");
 });
 
 // listening to port
@@ -15,7 +15,7 @@ app.listen(PORT, () => {
 });
 
 //connect to mongodb
-mongoose.connect(mongoUri);
+mongoose.connect(mongoUri, { useNewUrlParser: true });
 mongoose.connection.once("open", () => {
     console.log("connected to mongoose!!!!!");
 });
