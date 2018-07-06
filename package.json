@@ -18,7 +18,9 @@
   },
   "homepage": "https://github.com/dangjustintime/unit-2-project#readme",
   "dependencies": {
+    "ejs": "^2.6.1",
     "express": "^4.16.3",
+    "express-session": "^1.15.6",
     "mongoose": "^5.2.1"
   }
 }
