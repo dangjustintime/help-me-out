@@ -1,0 +1,11 @@
+-pokemon
+    -models
+        -pokemon
+        -trainers
+-clothing store
+-video game store
+-social blog
+   -twitter wannabe 
+-meme site
+-anime lists
+-fantasy basketball
