@@ -4,7 +4,7 @@ const app = express();
 const PORT = process.env.PORT || 3000;
 const mongoose = require("mongoose");
 const mongoUri =  process.env.MONGODB_URI || 'mongodb://localhost:27017/grocery_app_dev';
-
+const User = require("./models/user.js");
 app.get("/", (request, response) => {
     response.send("working");
 });
