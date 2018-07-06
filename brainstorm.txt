@@ -1,11 +1,33 @@
--pokemon
-    -models
-        -pokemon
-        -trainers
--clothing store
--video game store
--social blog
-   -twitter wannabe 
--meme site
--anime lists
--fantasy basketball
+-odd jobs
+    -services for the low price
+    -service categories
+        -homework
+        -physical labor
+        -errands
+        -creative
+        -technology
+        -etc
+-models
+    -user
+        -name
+        -email
+        -password
+        -profile pic
+        -bio
+        -skills
+        -customer rating (0 - 5)
+        -service done history
+        -service requests history
+    -service
+       -category
+       -price
+       -description
+       -location
+       -img
+       -status
+        -done
+        -not done
+        -working on it
+       -servee
+       -server
+       -deadline
