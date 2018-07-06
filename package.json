@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/dangjustintime/unit-2-project/issues"
   },
-  "homepage": "https://github.com/dangjustintime/unit-2-project#readme"
+  "homepage": "https://github.com/dangjustintime/unit-2-project#readme",
+  "dependencies": {
+    "express": "^4.16.3"
+  }
 }
