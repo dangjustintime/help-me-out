@@ -4,6 +4,15 @@ const router = express.Router();
 const User = require("../models/user.js");
 
 // routes
+// index route
+router.get("/", (request, response) => {
+    User.find({}, (error, allUsers) => {
+        response.render("users.ejs", {
+            Users: allUsers
+        })
+    });
+});
+
 // seed route
 router.get("/seed", async (request, response) => {
     const newUsers = [
@@ -105,5 +114,17 @@ router.get("/seed", async (request, response) => {
         response.send(error.message);
     }
 });
+
+// show route
+router.get("/:id", (request, response) => {
+    User.findById(request.params.id, (error, currentUser) => {
+        response.render("profile.ejs", {
+            User: currentUser
+        })
+    });
+});
+
+
+
 
 module.exports = router;
