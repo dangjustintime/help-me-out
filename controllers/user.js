@@ -151,4 +151,16 @@ router.put("/:id", (request, response) => {
     });
 });
 
+// delete route
+router.delete("/:id", (request, response) => {
+    User.findByIdAndDelete(request.params.id, (error, currentUser) => {
+        if (error) {
+            console.log(error);
+        } else {
+            console.log("Deleting User...");
+        }
+    });
+    response.redirect("/user");
+});
+
 module.exports = router;
