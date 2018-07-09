@@ -19,93 +19,83 @@ router.get("/seed", async (request, response) => {
     const newUsers = [
         {
             name: "Justin Dang",
-            password: "apple",
+            password: bcrypt.hashSync("apple", bcrypt.genSaltSync(10)),
             email: "dangjustintime@gmail.com",
             location: "Tallahassee, Florida",
             profilePic: "https://scontent.fmia1-2.fna.fbcdn.net/v/t1.0-1/p320x320/1970376_10203353474943623_8913990952585153013_n.jpg?_nc_cat=0&oh=77aba4312565f0d07f24976e5df5b079&oe=5BE3B5EE",
             skills: ["HTML", "CSS", "Javascript", "Sheep herding"],
-            friends: ["John Doe", "Marissa Mayer", "Kendall Jenner", "Lady Gaga"]
         },
         {
             name: "John Doe",
-            password: "lemon",
+            password: bcrypt.hashSync("lemon", bcrypt.genSaltSync(10)),
             email: "johndoe@gmail.com",
             location: "Kansas City, Kansas",
             profilePic: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5a/John_Doe%2C_born_John_Nommensen_Duchac.jpg/440px-John_Doe%2C_born_John_Nommensen_Duchac.jpg",
             skills: ["Knitting", "Writing"],
-            friends: ["Justin Dang", "Michelle Obama", "Donna Tartt"]
         },
         {
             name: "Michelle Obama",
-            password: "lime",
+            password: bcrypt.hashSync("lime", bcrypt.genSaltSync(10)),
             email: "michelleobama@hotmail.com",
             location: "Chicago, Illinois",
             profilePic: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4b/Michelle_Obama_2013_official_portrait.jpg/440px-Michelle_Obama_2013_official_portrait.jpg",
             skills: ["Politics", "Management", "Charity Work"],
-            friends: ["John Doe", "Marissa Mayer", "Dara Khosrowshahi", "Michio Kaku"]
         },
         {
             name: "Lady Gaga",
-            password: "banana",
+            password: bcrypt.hashSync("banana", bcrypt.genSaltSync(10)),
             email: "ladygaga@hotmail.com",
             location: "New York City, New York",
             profilePic: "https://upload.wikimedia.org/wikipedia/commons/e/ef/Lady_Gaga_JWT_Montreal_BM%2C_2017-11-03_%28cropped%29.jpg",
             skills: ["Singing", "Song Writing"],
-            friends: ["Justin Dang", "Aubrey Dake Graham", "Kendall Jenner"]
         },
         {
             name: "Aubrey Drake Graham",
-            password: "pickle",
+            password: bcrypt.hashSync("pickle", bcrypt.genSaltSync(10)),
             email: "drake@yahoo.com",
             location: "Toronto, Ontario",
             profilePic: "https://upload.wikimedia.org/wikipedia/commons/8/81/Drake_at_the_Velvet_Underground_-_2017_%2835986086223%29_%28cropped%29.jpg",
             skills: ["Rapping", "Singing", "Song Writing"],
-            friends: ["Lady Gaga", "Kendall Jenner"]
         },
         {
             name: "Donna Tartt",
-            password: "blueberry",
+            password: bcrypt.hashSync("blueberry", bcrypt.genSaltSync(10)),
             email: "donnatartt@gmail.com",
             location: "Greenwood, Mississippi",
             profilePic: "https://images.gr-assets.com/authors/1409871301p8/8719.jpg",
             skills: ["Writing"],
-            friends: ["Michelle Obama", "Dara Khosrowshahi", "Michio Kaku"]
         },
         {
             name: "Kendall Jenner",
-            password: "rasberry",
+            password: bcrypt.hashSync("rasberry", bcrypt.genSaltSync(10)),
             email: "kendalljenner@gmail.com",
             location: "Los Angeles, California",
             profilePic: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a1/Kendal_Jenner_Cannes_2017.jpg/440px-Kendal_Jenner_Cannes_2017.jpg",
             skills: ["Social Media", "Modeling"],
-            friends: ["Justin Dang", "Aubrey Drake Graham", "Lady Gaga"]
         },
         {
             name: "Michio Kaku",
-            password: "mango",
+            password: bcrypt.hashSync("mango", bcrypt.genSaltSync(10)),
             email: "michiokaku@aol.com",
             location: "New York City, New York",
             profilePic: "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7f/Michio_Kaku_Presentation.jpg/440px-Michio_Kaku_Presentation.jpg",
             skills: ["Physics", "Public Speaking", "Writing"],
-            friends: ["Donna Tartt", "Dara Khosrowshahi", "Michelle Obama"]
         },
         {
             name: "Dara Khosrowshahi",
-            password: "starfruit",
+            password: bcrypt.hashSync("starfruit", bcrypt.genSaltSync(10)),
             email: "darakhosrowshahi@uber.com",
             location: "New York City, New York",
             profilePic: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/02/Dara_Khosrowshahi_-_2012_%288189921554%29.jpg/440px-Dara_Khosrowshahi_-_2012_%288189921554%29.jpg",
             skills: ["Management", "Driving"],
-            friends: ["Michelle Obama", "Donna Tartt", "Michio Kaku"]
         },
         {
             name: "Marissa Mayer",
-            password: "peach",
+            password: bcrypt.hashSync("peach", bcrypt.genSaltSync(10)),
             email: "marissamayer@yahoo.com",
             location: "Palo Alto, California",
             profilePic: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/Marissa_Mayer%2C_World_Economic_Forum_2013_III.jpg/440px-Marissa_Mayer%2C_World_Economic_Forum_2013_III.jpg",
             skills: ["Management", "Software Developement"],
-            friends: ["Justin Dang", "Michelle Obama"]
         },
     ];
     try {
@@ -146,6 +136,7 @@ router.get("/:id/edit", (request, response) => {
     });
 });
 router.put("/:id", (request, response) => {
+    request.body.password = bcrypt.hashSync(request.body.password, bcrypt.genSaltSync(10));
     request.body.skills = request.body.skills.split(",");
     User.findByIdAndUpdate(request.params.id, request.body,
         { new: true }, (error, updatedUser) => {

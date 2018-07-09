@@ -5,6 +5,7 @@
         <title>Help Me Out</title>
     </head>
     <body>
+        <a href="/">Home</a>
         <img alt="Profile Pic" src="<%= User.profilePic %>">
         <h1><%= User.name %></h1>
         <h3>Email: <%= User.email %></h3>
@@ -13,12 +14,6 @@
         <ul>
             <% for (let i = 0; i < User.skills.length; i++) { %>
             <li><%= User.skills[i] %></li>
-            <% } %>
-        </ul>
-        <h4>Friends</h4>
-        <ul>
-            <% for (let i = 0; i < User.friends.length; i++) { %>
-            <li><%= User.friends[i] %></li>
             <% } %>
         </ul>
     </body>
