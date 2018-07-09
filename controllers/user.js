@@ -2,6 +2,7 @@
 const express = require("express");
 const router = express.Router();
 const User = require("../models/user.js");
+const bcrypt = require("bcrypt");
 
 // routes
 // index route
@@ -120,6 +121,7 @@ router.get("/new", (request, response) => {
     response.render("signup.ejs");
 });
 router.post("/", (request, response) => {
+    request.body.password = bcrypt.hashSync(request.body.password, bcrypt.genSaltSync(10));
     request.body.skills = request.body.skills.split(",");
     User.create(request.body, (error, newUser) => {
         response.redirect("/user");

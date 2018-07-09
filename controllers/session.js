@@ -6,7 +6,7 @@ const bcrypt = require("bcrypt");
 // sign in route
 router.post("/", (request, response) => {
     User.findOne({ email: request.body.email }, (error, foundUser) => {
-        if (request.body.password == foundUser.password) {
+        if (bcrypt.compareSync(request.body.password, foundUser.password)) {
             request.session.currentUser = foundUser;
             response.redirect("/");
         } else {
