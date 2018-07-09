@@ -8,7 +8,9 @@ const userSchema = Schema({
     location: String,
     profilePic: String,
     skills: [String],
-    friends: [String]
+    servicesDone: [String],
+    servicesDoing: [String],
+    servicesAsked: [String]
 });
 
 const User = mongoose.model("User", userSchema);
