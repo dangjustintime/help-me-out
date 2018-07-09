@@ -11,7 +11,7 @@ const jobSchema = Schema({
     location: String,
     skillsRequired: [String],
     img: String,
-    done: Boolean,
+    finished: Boolean,
     price: Number
 });
 

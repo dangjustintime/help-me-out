@@ -9,6 +9,7 @@ const mongoUri =  process.env.MONGODB_URI || 'mongodb://localhost:27017/grocery_
 const User = require("./models/user.js");
 const userController = require("./controllers/user.js");
 const sessionController = require("./controllers/session.js");
+const jobController = require("./controllers/job.js");
 
 // middleware
 app.use(express.urlencoded({ extended: false }));
@@ -22,6 +23,7 @@ app.use(express.static("public"));
 app.use(methodOverride("_method"));
 app.use("/user/", userController);
 app.use("/session/", sessionController);
+app.use("/job/", jobController);
 
 // home route
 app.get("/", (request, response) => {

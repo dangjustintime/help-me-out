@@ -111,7 +111,7 @@ router.get("/seed", async (request, response) => {
     try {
         const seedUsers = await User.create(newUsers);
         response.send(seedUsers);
-    } catch (erro) {
+    } catch (error) {
         response.send(error.message);
     }
 });
