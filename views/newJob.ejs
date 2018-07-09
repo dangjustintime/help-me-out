@@ -8,12 +8,12 @@
         <a href="/">Home</a>
         <h1>Create a Job</h1>
         <% if (currentUser) { %>
-        <form>
+        <form action="/job" method="POST">
             Title: <input type="text" name="title"><br>
             Description: <input type="text" name="description"><br>
             Deadline: <input type="date" name="deadline"><br>
             Location: <input type="text" name="Location"><br>
-            Skills Required: <input type="text" name="skills" placeholder="i.e. HTML,CSS,Javascript"><br>
+            Skills Required: <input type="text" name="skillsRequired" placeholder="i.e. HTML,CSS,Javascript"><br>
             Price: $<input type="number" name="price"><br>
             Image (link): <input type="text" name="img"><br>
             <input type="submit" value="Create Job">
