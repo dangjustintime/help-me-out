@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Help Me Out</title>
+    </head>
+    <body>
+        <h1>Edit Profile</h1>
+        <form action="/user/<%= User.id %>?_method=PUT" method="POST">
+            Name: <input type="text" name="name" value="<%= User.name %>"></br>
+            Email: <input type="text" name="email" value="<%= User.email %>"></br>
+            Password: <input type="password" name="password" value="<%= User.password %>"></br>
+            Location: <input type="text" name="location" value="<%= User.location %>"></br>
+            Skills: <input type="text" name="skills" value="<%= User.skills %>"></br>
+            Profile Picture (link): <input type="text" name="profilePic" value="<%= User.profilePic %>"></br>
+            <input type="submit" value="Save Changes">
+        </form>
+    </body>
+</html>

@@ -1,5 +1,6 @@
 // dependencies
 const express = require("express");
+const methodOverride = require("method-override");
 const app = express();
 const PORT = process.env.PORT || 3000;
 const mongoose = require("mongoose");
@@ -10,6 +11,7 @@ const userController = require("./controllers/user.js");
 // middleware
 app.use(express.urlencoded({ extended: false }));
 app.use(express.static("public"));
+app.use(methodOverride("_method"));
 app.use("/user/", userController);
 
 // test route

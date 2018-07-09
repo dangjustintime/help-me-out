@@ -135,7 +135,20 @@ router.get("/:id", (request, response) => {
     });
 });
 
-
-
+// edit route
+router.get("/:id/edit", (request, response) => {
+    User.findById(request.params.id, (error, currentUser) => {
+        response.render("editProfile.ejs", {
+            User: currentUser
+        });
+    });
+});
+router.put("/:id", (request, response) => {
+    request.body.skills = request.body.skills.split(",");
+    User.findByIdAndUpdate(request.params.id, request.body,
+        { new: true }, (error, updatedUser) => {
+            response.redirect("/user");
+    });
+});
 
 module.exports = router;
