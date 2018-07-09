@@ -115,6 +115,17 @@ router.get("/seed", async (request, response) => {
     }
 });
 
+// create route
+router.get("/new", (request, response) => {
+    response.render("signup.ejs");
+});
+router.post("/", (request, response) => {
+    request.body.skills = request.body.skills.split(",");
+    User.create(request.body, (error, newUser) => {
+        response.redirect("/user");
+    });
+});
+
 // show route
 router.get("/:id", (request, response) => {
     User.findById(request.params.id, (error, currentUser) => {
