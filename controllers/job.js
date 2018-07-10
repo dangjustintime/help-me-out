@@ -2,6 +2,7 @@
 const express = require("express");
 const router = express.Router();
 const Job = require("../models/job.js"); 
+const User = require("../models/user.js");
 
 // routes
 // index route
@@ -25,6 +26,14 @@ router.post("/", (request, response) => {
     request.body.finished = false;
     request.body.helper = "";
     request.body.author = request.session.currentUser.name;
+    User.findByIdAndUpdate(request.session.currentUser._id, { $push: { jobsAsked: request.body.title } }, 
+        (error, updatedUser) => {
+            if (error) {
+                console.log(error);
+            } else {
+                console.log(updatedUser);
+            }
+    });
     Job.create(request.body, (error, newJob) => {
         response.redirect("/job");
     });
