@@ -3,6 +3,7 @@
 <html>
     <% include ./partials/head.ejs %>
     <body>
+        <% include ./partials/nav.ejs %>
         <h1>Edit Job</h1>
         <form action="/job/<%= Job.id %>?_method=PUT" method="POST">
             Title: <input type="text" name="title" value="<%= Job.title %>"><br>

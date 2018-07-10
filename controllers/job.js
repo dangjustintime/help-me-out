@@ -44,6 +44,7 @@ router.get("/:id", (request, response) => {
 router.get("/:id/edit", (request, response) => {
     Job.findById(request.params.id, (error, currentJob) => {
         response.render("editJob.ejs", {
+            currentUser: request.session.currentUser,
             Job: currentJob
         });
     });
