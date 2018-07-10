@@ -2,7 +2,7 @@
 <html>
     <% include ./partials/head.ejs %>
     <body>
-        <a href="/">Home</a>
+        <% include ./partials/nav.ejs %>
         <img alt="Profile Pic" src="<%= User.profilePic %>">
         <h1><%= User.name %></h1>
         <h3>Email: <%= User.email %></h3>

@@ -8,6 +8,7 @@ const Job = require("../models/job.js");
 router.get("/", (request, response) => {
     Job.find({}, (error, allJobs) => {
         response.render("jobs.ejs", {
+            currentUser: request.session.currentUser,
             Jobs: allJobs
         });
     });
@@ -33,6 +34,7 @@ router.post("/", (request, response) => {
 router.get("/:id", (request, response) => {
     Job.findById(request.params.id, (error, currentJob) => {
         response.render("jobDetails.ejs", {
+            currentUser: request.session.currentUser,
             Job: currentJob
         });
     });

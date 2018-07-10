@@ -2,7 +2,7 @@
 <html>
     <% include ./partials/head.ejs %>
     <body>
-        <a href="/">Home</a>
+        <% include ./partials/nav.ejs %>
         <h1>Create a Job</h1>
         <% if (currentUser) { %>
         <form action="/job" method="POST">

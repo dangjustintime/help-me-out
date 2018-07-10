@@ -2,24 +2,32 @@
 <html>
     <% include ./partials/head.ejs %>
     <body>
-        <h1>Help Me Out</h1>
         <% if (currentUser) { %>
-        <h2>Welcome <%= currentUser.name %>!!!</h2>
-        <a href="/user">Users</a>
-        <a href="/user/<%= currentUser._id %>">Profile</a>
-        <a href="/user/<%= currentUser._id %>/edit">Edit Profile</a>
-        <a href="/job">Jobs</a>
-        <a href="/job/new">Post New Job</a>
+        <% include ./partials/nav.ejs %>
+        <h4>Welcome <%= currentUser.name %>!!!</h4>
         <form action="/session/?_method=DELETE" method="POST">
             <input type="submit" value="Log Out">
         </form>
         <% } else { %>
-        <form action="/session" method="POST">
-            Email: <input type="text" name="email" /><br>
-            Password: <input type="password" name="password" /><br>
-            <input type="submit" value="Log In">
-        </form>
-        <a href="/user/new">Register</a>
+        <% include ./partials/header.ejs %>
+        <% include ./partials/nav.ejs %>
+        <div class="container row">
+            <div class="container col s6">
+                <h4>About</h4>
+                <p class="flow-text">
+                    A social media service where people post small task or odd jobs for people to do for money.
+                </p>
+                <a class="btn green" href="/user/new">Register</a>
+            </div>
+            <div class="container col s6">
+                <h4>Log In</h4>
+                <form action="/session" method="POST">
+                    Email: <input type="text" name="email" /><br>
+                    Password: <input type="password" name="password" /><br>
+                    <input type="submit" value="Log In">
+                </form>
+            </div>
+        </div>
         <% } %>
     </body>
 </html>

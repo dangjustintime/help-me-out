@@ -1,0 +1,14 @@
+<nav>
+    <div class="nav-wrapper green lighten-3">
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/job">Jobs</a></li>
+            <li><a href="/user">Users</a></li>
+            <% if (currentUser) { %>
+            <li><a href="/user/<%= currentUser._id %>">Profile</a></li>
+            <li><a href="/user/<%= currentUser._id %>/edit">Edit Profile</a></li>
+            <li><a href="/job/new">Post New Job</a></li>
+            <% } %>
+        </ul>
+    </div>
+</nav>

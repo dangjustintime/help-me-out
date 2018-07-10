@@ -2,6 +2,7 @@
 <html>
     <% include ./partials/head.ejs %>
     <body>
+        <% include ./partials/nav.ejs %>
         <h1>Edit Profile</h1>
         <form action="/user/<%= User.id %>?_method=PUT" method="POST">
             Name: <input type="text" name="name" value="<%= User.name %>"></br>

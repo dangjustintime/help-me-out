@@ -9,6 +9,7 @@ const bcrypt = require("bcrypt");
 router.get("/", (request, response) => {
     User.find({}, (error, allUsers) => {
         response.render("users.ejs", {
+            currentUser: request.session.currentUser,
             Users: allUsers
         })
     });
@@ -122,6 +123,7 @@ router.post("/", (request, response) => {
 router.get("/:id", (request, response) => {
     User.findById(request.params.id, (error, currentUser) => {
         response.render("profile.ejs", {
+            currentUser: request.session.currentUser,
             User: currentUser
         })
     });
@@ -131,6 +133,7 @@ router.get("/:id", (request, response) => {
 router.get("/:id/edit", (request, response) => {
     User.findById(request.params.id, (error, currentUser) => {
         response.render("editProfile.ejs", {
+            currentUser: request.session.currentUser,
             User: currentUser
         });
     });
