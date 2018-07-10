@@ -22,8 +22,8 @@ app.use(session({
 app.use(express.static("public"));
 app.use(methodOverride("_method"));
 app.use("/user/", userController);
-app.use("/session/", sessionController);
 app.use("/job/", jobController);
+app.use("/session/", sessionController);
 
 // home route
 app.get("/", (request, response) => {
