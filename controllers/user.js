@@ -19,7 +19,7 @@ router.get("/seed", async (request, response) => {
     const newUsers = [
         {
             name: "Justin Dang",
-            password: bcrypt.hashSync("apple", bcrypt.genSaltSync(10)),
+            password: bcrypt.hashSync("justin", bcrypt.genSaltSync(10)),
             email: "dangjustintime@gmail.com",
             location: "Tallahassee, Florida",
             profilePic: "https://scontent.fmia1-2.fna.fbcdn.net/v/t1.0-1/p320x320/1970376_10203353474943623_8913990952585153013_n.jpg?_nc_cat=0&oh=77aba4312565f0d07f24976e5df5b079&oe=5BE3B5EE",
@@ -27,7 +27,7 @@ router.get("/seed", async (request, response) => {
         },
         {
             name: "John Doe",
-            password: bcrypt.hashSync("lemon", bcrypt.genSaltSync(10)),
+            password: bcrypt.hashSync("john", bcrypt.genSaltSync(10)),
             email: "johndoe@gmail.com",
             location: "Kansas City, Kansas",
             profilePic: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5a/John_Doe%2C_born_John_Nommensen_Duchac.jpg/440px-John_Doe%2C_born_John_Nommensen_Duchac.jpg",
@@ -35,7 +35,7 @@ router.get("/seed", async (request, response) => {
         },
         {
             name: "Michelle Obama",
-            password: bcrypt.hashSync("lime", bcrypt.genSaltSync(10)),
+            password: bcrypt.hashSync("michelle", bcrypt.genSaltSync(10)),
             email: "michelleobama@hotmail.com",
             location: "Chicago, Illinois",
             profilePic: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4b/Michelle_Obama_2013_official_portrait.jpg/440px-Michelle_Obama_2013_official_portrait.jpg",
@@ -43,7 +43,7 @@ router.get("/seed", async (request, response) => {
         },
         {
             name: "Lady Gaga",
-            password: bcrypt.hashSync("banana", bcrypt.genSaltSync(10)),
+            password: bcrypt.hashSync("lady", bcrypt.genSaltSync(10)),
             email: "ladygaga@hotmail.com",
             location: "New York City, New York",
             profilePic: "https://upload.wikimedia.org/wikipedia/commons/e/ef/Lady_Gaga_JWT_Montreal_BM%2C_2017-11-03_%28cropped%29.jpg",
@@ -51,7 +51,7 @@ router.get("/seed", async (request, response) => {
         },
         {
             name: "Aubrey Drake Graham",
-            password: bcrypt.hashSync("pickle", bcrypt.genSaltSync(10)),
+            password: bcrypt.hashSync("aubrey", bcrypt.genSaltSync(10)),
             email: "drake@yahoo.com",
             location: "Toronto, Ontario",
             profilePic: "https://upload.wikimedia.org/wikipedia/commons/8/81/Drake_at_the_Velvet_Underground_-_2017_%2835986086223%29_%28cropped%29.jpg",
@@ -59,7 +59,7 @@ router.get("/seed", async (request, response) => {
         },
         {
             name: "Donna Tartt",
-            password: bcrypt.hashSync("blueberry", bcrypt.genSaltSync(10)),
+            password: bcrypt.hashSync("donna", bcrypt.genSaltSync(10)),
             email: "donnatartt@gmail.com",
             location: "Greenwood, Mississippi",
             profilePic: "https://images.gr-assets.com/authors/1409871301p8/8719.jpg",
@@ -67,7 +67,7 @@ router.get("/seed", async (request, response) => {
         },
         {
             name: "Kendall Jenner",
-            password: bcrypt.hashSync("rasberry", bcrypt.genSaltSync(10)),
+            password: bcrypt.hashSync("kendall", bcrypt.genSaltSync(10)),
             email: "kendalljenner@gmail.com",
             location: "Los Angeles, California",
             profilePic: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a1/Kendal_Jenner_Cannes_2017.jpg/440px-Kendal_Jenner_Cannes_2017.jpg",
@@ -75,7 +75,7 @@ router.get("/seed", async (request, response) => {
         },
         {
             name: "Michio Kaku",
-            password: bcrypt.hashSync("mango", bcrypt.genSaltSync(10)),
+            password: bcrypt.hashSync("michio", bcrypt.genSaltSync(10)),
             email: "michiokaku@aol.com",
             location: "New York City, New York",
             profilePic: "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7f/Michio_Kaku_Presentation.jpg/440px-Michio_Kaku_Presentation.jpg",
@@ -83,7 +83,7 @@ router.get("/seed", async (request, response) => {
         },
         {
             name: "Dara Khosrowshahi",
-            password: bcrypt.hashSync("starfruit", bcrypt.genSaltSync(10)),
+            password: bcrypt.hashSync("dara", bcrypt.genSaltSync(10)),
             email: "darakhosrowshahi@uber.com",
             location: "New York City, New York",
             profilePic: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/02/Dara_Khosrowshahi_-_2012_%288189921554%29.jpg/440px-Dara_Khosrowshahi_-_2012_%288189921554%29.jpg",
@@ -91,7 +91,7 @@ router.get("/seed", async (request, response) => {
         },
         {
             name: "Marissa Mayer",
-            password: bcrypt.hashSync("peach", bcrypt.genSaltSync(10)),
+            password: bcrypt.hashSync("marissa", bcrypt.genSaltSync(10)),
             email: "marissamayer@yahoo.com",
             location: "Palo Alto, California",
             profilePic: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/Marissa_Mayer%2C_World_Economic_Forum_2013_III.jpg/440px-Marissa_Mayer%2C_World_Economic_Forum_2013_III.jpg",
