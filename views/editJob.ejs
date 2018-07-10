@@ -1,5 +1,8 @@
+<!-- DOTO: need to fix value for deadline -->
 <!DOCTYPE html>
 <html>
+    <head>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/css/materialize.min.css">
     </head>
     <body>
         <a href="/">Home</a>
@@ -7,7 +10,7 @@
         <form action="/job/<%= Job.id %>?_method=PUT" method="POST">
             Title: <input type="text" name="title" value="<%= Job.title %>"><br>
             Description: <input type="text" name="description" value="<%= Job.description %>"><br>
-            Deadline: <input type="date" name="deadline" value="<%= Job.deadline %>"><br>
+            Deadline: <input type="date" name="deadline" value="<%= Job.deadline.getFullYear() %>-01-01"><br>
             Location: <input type="text" name="location" value="<%= Job.location %>"><br>
             Skills Required: <input type="text" name="skillsRequired" placeholder="i.e. HTML,CSS,Javascript" value="<%= Job.skillsRequired %>"><br>
             Price: $<input type="number" name="price" value="<%= Job.price %>"><br>
