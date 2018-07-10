@@ -1,10 +1,6 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="UTF-8">
-        <title>Job Details</title>
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/css/materialize.min.css">
-    </head>
+    <% include ./partials/head.ejs %>
     <body>
         <a href="/job/<%= Job.id %>/edit">Edit</a>
         <img src="<%= Job.img %>">
