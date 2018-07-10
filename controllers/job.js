@@ -26,7 +26,7 @@ router.post("/", (request, response) => {
     request.body.author = request.session.currentUser.name;
     Job.create(request.body, (error, newJob) => {
         response.redirect("/job");
-    })
+    });
 });
 
 // show route
@@ -62,5 +62,15 @@ router.put("/:id", (request, response) => {
 // job done route
 
 // delete route
+router.delete("/:id", (request, response) => {
+    Job.findByIdAndDelete(request.params.id, (error, currentProduct) => {
+        if (error) {
+            console.log(error);
+        } else {
+            console.log("Deleting Job...");
+        }
+    });
+    response.redirect("/");
+});
 
 module.exports = router;

@@ -13,5 +13,17 @@
             <li><%= User.skills[i] %></li>
             <% } %>
         </ul>
+        <h4>Jobs Asked</h4>
+        <ul>
+            <% for (let i = 0; i < User.jobsAsked.length; i++) { %>
+            <li><%= User.jobsAsked[i] %></li>
+            <% } %>
+        </ul>
+        <h4>Jobs Done</h4>
+        <ul>
+            <% for (let i = 0; i < User.jobsDone.length; i++) { %>
+            <li><%= User.jobsDone[i] %></li>
+            <% } %>
+        </ul>
     </body>
 </html>
