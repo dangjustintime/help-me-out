@@ -8,7 +8,10 @@
         <h1>Jobs</h1>
         <ul>
             <% for (let i = 0; i < Jobs.length; i++) { %>
-            <li><a href="/job/<%= Jobs[i].id %>"><%= Jobs[i].title %></a></li>
+            <li>
+                <a href="/job/<%= Jobs[i].id %>"><%= Jobs[i].title %></a>
+                <p>Author: <%= Jobs[i].author %></p>
+            </li>
             <% } %>
         </ul>
     </body>

@@ -2,14 +2,30 @@
 <html>
     <head>
         <meta charset="UTF-8">
-        <title>Help Me Out</title>
+        <title>Job Details</title>
     </head>
     <body>
-        <h1>Jobs</h1>
+        <img src="<%= Job.img %>">
+        <h1><%= Job.title %></h1>
+        <h3>Price: $<%= Job.price %></h3>
+        <h3>Author: <%= Job.author %></h3> 
+        <h3>Description</h3>
+        <p><%= Job.description %></p>
+        <h3>Helper: <%= Job.helper %></h3>
+        <h3>Deadline: <%= Job.deadline %></h3>
+        <h3>Location: <%= Job.location %></h3>
+        <h3>Skills Required</h3>
         <ul>
-            <% for (let i = 0; i < Jobs.length; i++) { %>
-            <li><a href="#"><%= Jobs[i].title %></a></li>
+            <% for (let i = 0; i < Job.skillsRequired.length; i++) { %>
+            <li><%= Job.skillsRequired[i] %></li>
             <% } %>
         </ul>
+        <h3>Finished: 
+            <% if (Job.finished) { %>
+            Finished
+            <% } else { %>
+            Not Finished
+            <% } %>
+        </h3>
     </body>
 </html>
