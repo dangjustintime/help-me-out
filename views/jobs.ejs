@@ -20,7 +20,9 @@
                                 <p>Author: <%= Jobs[i].author %></p>
                             </div>
                             <div class="card-action">
-                                <a class="btn" href="#">Help out</a>
+                                <form action="/job/<%= Jobs[i].id %>/helpOut?_method=PUT" method="POST">
+                                    <input type="submit" value="Help Out">
+                                </form>
                                 <a class="btn right" href="/job/<%= Jobs[i].id %>">More</a>
                             </div>
                         </div>

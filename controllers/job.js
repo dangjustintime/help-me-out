@@ -72,7 +72,12 @@ router.put("/:id", (request, response) => {
     });
 });
 
-// job done route
+// take job route
+router.put("/:id/helpOut", (request, response) => {
+    Job.findByIdAndUpdate(request.params.id, { helper: request.session.currentUser.name }, (error, UpdatedJob) => {
+        response.redirect("/");
+    });
+});
 
 // delete route
 router.delete("/:id", (request, response) => {
