@@ -24,7 +24,7 @@
                     <h5>Jobs Done</h5>
                     <ul>
                     <% for (let i = 0; i < Jobs.length; i++) {
-                       if (Jobs[i].helper == currentUser.name && Jobs[i].finished == true) { %> 
+                       if (Jobs[i].helper == currentUser.name && Jobs[i].finished == false) { %> 
                     <li><%= Jobs[i].title %></li> 
                     <% } %>
                     <% } %>
