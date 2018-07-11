@@ -13,16 +13,31 @@
                 <div class="container col s4">
                     <h5>Job Posts</h5>
                     <ul>
+                    <% for (let i = 0; i < Jobs.length; i++) {
+                       if (Jobs[i].author == currentUser.name && Jobs[i].finished == false) { %> 
+                    <li><%= Jobs[i].title %></li> 
+                    <% } %>
+                    <% } %>
                     </ul>
                 </div>
                 <div class="container col s4">
                     <h5>Jobs Done</h5>
                     <ul>
+                    <% for (let i = 0; i < Jobs.length; i++) {
+                       if (Jobs[i].helper == currentUser.name && Jobs[i].finished == true) { %> 
+                    <li><%= Jobs[i].title %></li> 
+                    <% } %>
+                    <% } %>
                     </ul>
                 </div>
                 <div class="container col s4">
                     <h5>Finished Jobs</h5>
                     <ul>
+                    <% for (let i = 0; i < Jobs.length; i++) {
+                       if (Jobs[i].author == currentUser.name && Jobs[i].finished == true) { %> 
+                    <li><%= Jobs[i].title %></li> 
+                    <% } %>
+                    <% } %>
                     </ul>
                 </div>
             </div> 

@@ -7,6 +7,7 @@ const PORT = process.env.PORT || 3000;
 const mongoose = require("mongoose");
 const mongoUri =  process.env.MONGODB_URI || 'mongodb://localhost:27017/grocery_app_dev';
 const User = require("./models/user.js");
+const Job = require("./models/job.js");
 const userController = require("./controllers/user.js");
 const sessionController = require("./controllers/session.js");
 const jobController = require("./controllers/job.js");
@@ -27,8 +28,11 @@ app.use("/session/", sessionController);
 
 // home route
 app.get("/", (request, response) => {
-    response.render("home.ejs", {
-        currentUser: request.session.currentUser
+    Job.find({}, (error, allJobs) => {
+        response.render("home.ejs", {
+            Jobs: allJobs,
+            currentUser: request.session.currentUser
+        });
     });
 });
 
@@ -39,6 +43,5 @@ app.listen(PORT, () => {
 
 //connect to mongodb
 mongoose.connect(mongoUri, { useNewUrlParser: true });
-mongoose.connection.once("open", () => {
-    console.log("connected to mongoose!!!!!");
+mongoose.connection.once("open", () => { console.log("connected to mongoose!!!!!");
 });

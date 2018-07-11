@@ -26,6 +26,10 @@ router.post("/", (request, response) => {
     request.body.finished = false;
     request.body.helper = "";
     request.body.author = request.session.currentUser.name;
+    Job.create(request.body, (error, newJob) => {
+        response.redirect("/job");
+    });
+    // push job title to author's jobAsked array
     User.findByIdAndUpdate(request.session.currentUser._id, { $push: { jobsAsked: request.body.title } }, 
         (error, updatedUser) => {
             if (error) {
@@ -33,9 +37,6 @@ router.post("/", (request, response) => {
             } else {
                 console.log(updatedUser);
             }
-    });
-    Job.create(request.body, (error, newJob) => {
-        response.redirect("/job");
     });
 });
 
