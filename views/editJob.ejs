@@ -4,24 +4,26 @@
     <% include ./partials/head.ejs %>
     <body>
         <% include ./partials/nav.ejs %>
-        <h1>Edit Job</h1>
-        <form action="/job/<%= Job.id %>?_method=PUT" method="POST">
-            Title: <input type="text" name="title" value="<%= Job.title %>"><br>
-            Description: <input type="text" name="description" value="<%= Job.description %>"><br>
-            Helper: <input type="text" name="helper" value="<%= Job.helper %>"><br>
-            Deadline: <input type="date" name="deadline" value="<%= Job.deadline.getFullYear() %>-01-01"><br>
-            Location: <input type="text" name="location" value="<%= Job.location %>"><br>
-            Skills Required: <input type="text" name="skillsRequired" placeholder="i.e. HTML,CSS,Javascript" value="<%= Job.skillsRequired %>"><br>
-            Price: $<input type="number" name="price" value="<%= Job.price %>"><br>
-            Image (link): <input type="text" name="img" value="<%= Job.img %>"><br>
-            Finished: <input type="checkbox" name="finished" 
-            <% if (Job.finished) { %>
-            checked
-            <% } %> >
-            <input type="submit" value="Save Changes">
-        </form>
-        <form action="/job/<%= Job.id %>?_method=DELETE" method="POST">
-            <input type="submit" value="DELETE JOB">
-        </form>
+        <div class="container">
+            <h1>Edit Job</h1>
+            <form action="/job/<%= Job.id %>?_method=PUT" method="POST">
+                Title: <input type="text" name="title" value="<%= Job.title %>"><br>
+                Description: <input type="text" name="description" value="<%= Job.description %>"><br>
+                Helper: <input type="text" name="helper" value="<%= Job.helper %>"><br>
+                Deadline: <input type="date" name="deadline" value="<%= Job.deadline.getFullYear() %>-01-01"><br>
+                Location: <input type="text" name="location" value="<%= Job.location %>"><br>
+                Skills Required: <input type="text" name="skillsRequired" placeholder="i.e. HTML,CSS,Javascript" value="<%= Job.skillsRequired %>"><br>
+                Price: $<input type="number" name="price" value="<%= Job.price %>"><br>
+                Image (link): <input type="text" name="img" value="<%= Job.img %>"><br>
+                Finished: <input type="checkbox" name="finished" 
+                <% if (Job.finished) { %>
+                checked
+                <% } %> >
+                <input type="submit" value="Save Changes">
+            </form>
+            <form action="/job/<%= Job.id %>?_method=DELETE" method="POST">
+                <input type="submit" value="DELETE JOB">
+            </form>
+        </div>
     </body>
 </html>
