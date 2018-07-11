@@ -1,0 +1,76 @@
+<div class="container">
+    <h4>Welcome <%= currentUser.name %>!!!</h4>
+    <h1 class="center">Current Balance: $<%= currentUser.balance %></h1>
+    <form action="/session/?_method=DELETE" method="POST">
+        <input type="submit" value="Log Out">
+    </form>
+    <div class="container row">
+        <h2 class="center">Jobs</h2>
+        <div class="container col s4">
+            <h5>Working On</h5>
+            <ul>
+            <% for (let i = 0; i < Jobs.length; i++) {
+               if (Jobs[i].helper == currentUser.name && Jobs[i].finished == false) { %> 
+            <li>
+                <a href="/job/<%= Jobs[i].id %>">
+                    <div class="card">
+                        <div class="card-image">
+                            <img src="<%= Jobs[i].img %>">
+                        </div>
+                        <div class="card-content">
+                            <p><%= Jobs[i].title %></p>
+                        </div>
+                    </div>
+                </a>
+            </li> 
+            <% } %>
+            <% } %>
+            </ul>
+        </div>
+        <div class="container col s4">
+            <h5>Asked</h5>
+            <ul>
+            <% for (let i = 0; i < Jobs.length; i++) {
+               if (Jobs[i].author == currentUser.name && Jobs[i].finished == false && Jobs[i].helper == "") { %> 
+            <li>
+                <a href="/job/<%= Jobs[i].id %>">
+                    <div class="card">
+                        <div class="card-image">
+                            <img src="<%= Jobs[i].img %>">
+                        </div>
+                        <div class="card-content">
+                            <p><%= Jobs[i].title %></p>
+                        </div>
+                    </div>
+                </a>
+            </li> 
+            <% } %>
+            <% } %>
+            </ul>
+        </div>
+        <div class="container col s4">
+            <h5>In Progress</h5>
+            <ul>
+            <% for (let i = 0; i < Jobs.length; i++) {
+               if (Jobs[i].author == currentUser.name && Jobs[i].finished == false && Jobs[i].helper != "") { %> 
+            <li>
+                <a href="/job/<%= Jobs[i].id %>">
+                    <div class="card">
+                        <div class="card-image">
+                            <img src="<%= Jobs[i].img %>">
+                        </div>
+                        <div class="card-content">
+                            <p><%= Jobs[i].title %></p>
+                        </div>
+                        <div class="card-action">
+                            <a class="btn" href="#">Done</a>
+                        </div>
+                    </div>
+                </a>
+            </li> 
+            <% } %>
+            <% } %>
+            </ul>
+        </div>
+    </div> 
+</div>
