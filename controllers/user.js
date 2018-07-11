@@ -25,6 +25,7 @@ router.get("/seed", async (request, response) => {
             location: "Tallahassee, Florida",
             profilePic: "https://scontent.fmia1-2.fna.fbcdn.net/v/t1.0-1/p320x320/1970376_10203353474943623_8913990952585153013_n.jpg?_nc_cat=0&oh=77aba4312565f0d07f24976e5df5b079&oe=5BE3B5EE",
             skills: ["HTML", "CSS", "Javascript", "Sheep herding"],
+            balance: 15000
         },
         {
             name: "John Doe",
@@ -33,6 +34,7 @@ router.get("/seed", async (request, response) => {
             location: "Kansas City, Kansas",
             profilePic: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5a/John_Doe%2C_born_John_Nommensen_Duchac.jpg/440px-John_Doe%2C_born_John_Nommensen_Duchac.jpg",
             skills: ["Knitting", "Writing"],
+            balance: 500 
         },
         {
             name: "Michelle Obama",
@@ -41,6 +43,7 @@ router.get("/seed", async (request, response) => {
             location: "Chicago, Illinois",
             profilePic: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4b/Michelle_Obama_2013_official_portrait.jpg/440px-Michelle_Obama_2013_official_portrait.jpg",
             skills: ["Politics", "Management", "Charity Work"],
+            balance: 2300 
         },
         {
             name: "Lady Gaga",
@@ -49,6 +52,7 @@ router.get("/seed", async (request, response) => {
             location: "New York City, New York",
             profilePic: "https://upload.wikimedia.org/wikipedia/commons/e/ef/Lady_Gaga_JWT_Montreal_BM%2C_2017-11-03_%28cropped%29.jpg",
             skills: ["Singing", "Song Writing"],
+            balance: 190 
         },
         {
             name: "Aubrey Drake Graham",
@@ -57,6 +61,7 @@ router.get("/seed", async (request, response) => {
             location: "Toronto, Ontario",
             profilePic: "https://upload.wikimedia.org/wikipedia/commons/8/81/Drake_at_the_Velvet_Underground_-_2017_%2835986086223%29_%28cropped%29.jpg",
             skills: ["Rapping", "Singing", "Song Writing"],
+            balance: 9000 
         },
         {
             name: "Donna Tartt",
@@ -65,6 +70,7 @@ router.get("/seed", async (request, response) => {
             location: "Greenwood, Mississippi",
             profilePic: "https://images.gr-assets.com/authors/1409871301p8/8719.jpg",
             skills: ["Writing"],
+            balance: 300 
         },
         {
             name: "Kendall Jenner",
@@ -73,6 +79,7 @@ router.get("/seed", async (request, response) => {
             location: "Los Angeles, California",
             profilePic: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a1/Kendal_Jenner_Cannes_2017.jpg/440px-Kendal_Jenner_Cannes_2017.jpg",
             skills: ["Social Media", "Modeling"],
+            balance: 2400 
         },
         {
             name: "Michio Kaku",
@@ -81,6 +88,7 @@ router.get("/seed", async (request, response) => {
             location: "New York City, New York",
             profilePic: "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7f/Michio_Kaku_Presentation.jpg/440px-Michio_Kaku_Presentation.jpg",
             skills: ["Physics", "Public Speaking", "Writing"],
+            balance: 100 
         },
         {
             name: "Dara Khosrowshahi",
@@ -89,6 +97,7 @@ router.get("/seed", async (request, response) => {
             location: "New York City, New York",
             profilePic: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/02/Dara_Khosrowshahi_-_2012_%288189921554%29.jpg/440px-Dara_Khosrowshahi_-_2012_%288189921554%29.jpg",
             skills: ["Management", "Driving"],
+            balance: 490 
         },
         {
             name: "Marissa Mayer",
@@ -97,6 +106,7 @@ router.get("/seed", async (request, response) => {
             location: "Palo Alto, California",
             profilePic: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/Marissa_Mayer%2C_World_Economic_Forum_2013_III.jpg/440px-Marissa_Mayer%2C_World_Economic_Forum_2013_III.jpg",
             skills: ["Management", "Software Developement"],
+            balance: 3300 
         },
     ];
     try {

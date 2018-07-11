@@ -10,7 +10,8 @@ const userSchema = Schema({
     skills: [String],
     jobsDone: [String],
     jobsDoing: [String],
-    jobsAsked: [String]
+    jobsAsked: [String],
+    balance: Number
 });
 
 const User = mongoose.model("User", userSchema);
