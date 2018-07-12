@@ -27,7 +27,7 @@
                             </div>
                             <div class="card-action">
                                 <a href="/user/<%= Users[i].id %>">Profile</a>
-                                <% if (currentUser.name == Users[i].name) { %>
+                                <% if (currentUser && currentUser.name == Users[i].name) { %>
                                 <a href="/user/<%= Users[i].id %>/edit">Edit</a>
                                 <% } %>
                             </div>
