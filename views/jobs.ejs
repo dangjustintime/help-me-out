@@ -22,9 +22,11 @@
                             </div>
                             <div class="card-action">
                                 <a href="/job/<%= Jobs[i].id %>">More</a>
+                                <% if (currentUser) { %>
                                 <form class="right" action="/job/<%= Jobs[i].id %>/helpOut?_method=PUT" method="POST">
                                     <input type="submit" value="Help Out">
                                 </form>
+                                <% } %>
                             </div>
                         </div>
                     </div>
