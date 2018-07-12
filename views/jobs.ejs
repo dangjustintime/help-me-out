@@ -6,7 +6,8 @@
         <div class="container">
             <h1>Jobs</h1>
             <ul>
-                <% for (let i = 0; i < Jobs.length; i++) { %>
+                <% for (let i = 0; i < Jobs.length; i++) { 
+                   if (Jobs[i].finished == false) { %>
                 <li>
                     <div class="row">
                         <div class="card">
@@ -28,7 +29,7 @@
                         </div>
                     </div>
                 </li>
-                <% } %>
+                <% }} %>
             </ul>
         </div> 
     </body>

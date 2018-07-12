@@ -1,3 +1,4 @@
+// DOTO: need to fix job finished route to update balance on home page
 // dependencies
 const express = require("express");
 const router = express.Router();
@@ -77,6 +78,30 @@ router.put("/:id/helpOut", (request, response) => {
     Job.findByIdAndUpdate(request.params.id, { helper: request.session.currentUser.name }, (error, UpdatedJob) => {
         response.redirect("/");
     });
+});
+
+// job finished route
+router.put("/:id/finished", (request, response) => {
+    Job.findByIdAndUpdate(request.params.id, { finished: true }, { new: true },
+     (error, updatedJob) => {
+        if (error) {
+            console.log(error);
+        } else {
+            console.log(updatedJob);
+            User.findOneAndUpdate({ name: updatedJob.author },
+                { $inc: { balance: -updatedJob.price } }, { new: true },
+                    (error, updatedAuthor) => {
+                    console.log(updatedAuthor);
+                    request.session.currentUser = updatedAuthor;
+            });
+            User.findOneAndUpdate({ name: updatedJob.helper },
+                { $inc: { balance: +updatedJob.price } }, { new: true },
+                    (error, updatedHelper) => {
+                    console.log(updatedHelper);
+            });
+            response.redirect("/");
+        }
+     });
 });
 
 // delete route

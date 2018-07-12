@@ -63,7 +63,9 @@
                             <p><%= Jobs[i].title %></p>
                         </div>
                         <div class="card-action">
-                            <a class="btn" href="#">Done</a>
+                            <form action="/job/<%= Jobs[i].id %>/finished?_method=PUT" method="POST">
+                                <input type="submit" value="done">
+                            </form>
                         </div>
                     </div>
                 </a>
