@@ -2,15 +2,18 @@
 <html>
     <% include ./partials/head.ejs %>
     <body>
+    <% include ./partials/nav.ejs %>
+        <div class="container">
         <h1>Sign Up</h1>
-        <form action="/user" method="POST">
-            Name: <input type="text" name="name"></br>
-            Email: <input type="text" name="email"></br>
-            Password: <input type="password" name="password"></br>
-            Location: <input type="text" name="location"></br>
-            Skills: <input type="text" name="skills" placeholder="e.i. HTML, CSS, Javascript"></br>
-            Profile Picture (link): <input type="text" name="profilePic"></br>
-            <input type="submit" value="Create Account">
-        </form>
+            <form action="/user" method="POST">
+                Name: <input type="text" name="name"></br>
+                Email: <input type="text" name="email"></br>
+                Password: <input type="password" name="password"></br>
+                Location: <input type="text" name="location"></br>
+                Skills: <input type="text" name="skills" placeholder="e.i. HTML, CSS, Javascript"></br>
+                Profile Picture (link): <input type="text" name="profilePic"></br>
+                <input type="submit" value="Create Account">
+            </form>
+        </body>
     </body>
 </html>

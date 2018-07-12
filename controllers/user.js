@@ -119,7 +119,9 @@ router.get("/seed", async (request, response) => {
 
 // create route
 router.get("/new", (request, response) => {
-    response.render("signup.ejs");
+    response.render("signup.ejs", {
+        currentUser: request.session.currentUser
+    });
 });
 router.post("/", (request, response) => {
     request.body.password = bcrypt.hashSync(request.body.password, bcrypt.genSaltSync(10));
