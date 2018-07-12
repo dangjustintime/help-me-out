@@ -8,9 +8,31 @@
             <ul>
                 <% for (let i = 0; i < Users.length; i++) { %>
                 <li>
-                    <a href="/user/<%= Users[i].id %>"><%= Users[i].name %></a>
-                    <a href="/user/<%= Users[i].id %>/edit">Edit</a>
-                    <form action=""
+                    <div class="container card small horizontal">
+                        <div class="card-image">
+                            <img src="<%= Users[i].profilePic %>"> 
+                        </div>
+                        <div class="card-stacked">
+                            <div class="card-content">
+                                <h3><%= Users[i].name %></h3>
+                                <h6><%= Users[i].location %></h6>
+                                <h6>Skills</h6>
+                                <div class="container">
+                                    <ul>
+                                    <% for (let j = 0; j < Users[i].skills.length; j++) { %>
+                                        <li><%= Users[i].skills[j] %></li>
+                                    <% } %>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="card-action">
+                                <a href="/user/<%= Users[i].id %>">Profile</a>
+                                <% if (currentUser.name == Users[i].name) { %>
+                                <a href="/user/<%= Users[i].id %>/edit">Edit</a>
+                                <% } %>
+                            </div>
+                        </div>
+                    </div>
                 </li>
                 <% } %> 
             </ul>
