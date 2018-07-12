@@ -126,8 +126,9 @@ router.get("/new", (request, response) => {
 router.post("/", (request, response) => {
     request.body.password = bcrypt.hashSync(request.body.password, bcrypt.genSaltSync(10));
     request.body.skills = request.body.skills.split(",");
+    request.body.balance = 0;
     User.create(request.body, (error, newUser) => {
-        response.redirect("/user");
+        response.redirect("/");
     });
 });
 
