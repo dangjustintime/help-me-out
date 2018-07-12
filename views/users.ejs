@@ -3,15 +3,17 @@
     <% include ./partials/head.ejs %>
     <body>
         <% include ./partials/nav.ejs %>
-        <h1>Users</h1>
-        <ul>
-            <% for (let i = 0; i < Users.length; i++) { %>
-            <li>
-                <a href="/user/<%= Users[i].id %>"><%= Users[i].name %></a>
-                <a href="/user/<%= Users[i].id %>/edit">Edit</a>
-                <form action=""
-            </li>
-            <% } %> 
-        </ul>
+        <div class="container">
+            <h1>Users</h1>
+            <ul>
+                <% for (let i = 0; i < Users.length; i++) { %>
+                <li>
+                    <a href="/user/<%= Users[i].id %>"><%= Users[i].name %></a>
+                    <a href="/user/<%= Users[i].id %>/edit">Edit</a>
+                    <form action=""
+                </li>
+                <% } %> 
+            </ul>
+        </div>
     </body>
 </html>

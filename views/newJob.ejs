@@ -3,20 +3,22 @@
     <% include ./partials/head.ejs %>
     <body>
         <% include ./partials/nav.ejs %>
-        <h1>Create a Job</h1>
-        <% if (currentUser) { %>
-        <form action="/job" method="POST">
-            Title: <input type="text" name="title"><br>
-            Description: <input type="text" name="description"><br>
-            Deadline: <input type="date" name="deadline"><br>
-            Location: <input type="text" name="location"><br>
-            Skills Required: <input type="text" name="skillsRequired" placeholder="i.e. HTML,CSS,Javascript"><br>
-            Price: $<input type="number" name="price"><br>
-            Image (link): <input type="text" name="img"><br>
-            <input type="submit" value="Create Job">
-        </form>
-        <% } else { %>
-            Must log in to create a job.
-        <% } %>
+        <div class="container">
+            <h1>Create a Job</h1>
+            <% if (currentUser) { %>
+            <form action="/job" method="POST">
+                Title: <input type="text" name="title"><br>
+                Description: <input type="text" name="description"><br>
+                Deadline: <input type="date" name="deadline"><br>
+                Location: <input type="text" name="location"><br>
+                Skills Required: <input type="text" name="skillsRequired" placeholder="i.e. HTML,CSS,Javascript"><br>
+                Price: $<input type="number" name="price"><br>
+                Image (link): <input type="text" name="img"><br>
+                <input type="submit" value="Create Job">
+            </form>
+            <% } else { %>
+                Must log in to create a job.
+            <% } %>
+        </div>
     </body>
 </html>
