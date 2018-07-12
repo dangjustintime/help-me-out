@@ -92,13 +92,13 @@ router.put("/:id/finished", (request, response) => {
                 { $inc: { balance: -updatedJob.price } }, { new: true },
                     (error, updatedAuthor) => {
                     console.log(updatedAuthor);
-                    request.session.currentUser = updatedAuthor;
             });
             User.findOneAndUpdate({ name: updatedJob.helper },
                 { $inc: { balance: +updatedJob.price } }, { new: true },
                     (error, updatedHelper) => {
                     console.log(updatedHelper);
             });
+            request.session.currentUser.balance -= updatedJob.price;
             response.redirect("/");
         }
      });

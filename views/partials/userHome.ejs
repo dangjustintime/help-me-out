@@ -1,6 +1,10 @@
 <div class="container">
     <h4>Welcome <%= currentUser.name %>!!!</h4>
-    <h1 class="center">Current Balance: $<%= currentUser.balance %></h1>
+
+    <h1 class="center">
+        Current Balance: $<%= currentUser.balance %>
+    </h1>
+
     <form action="/session/?_method=DELETE" method="POST">
         <input type="submit" value="Log Out">
     </form>
