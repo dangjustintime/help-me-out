@@ -31,7 +31,7 @@
                 Not Finished
                 <% } %>
             </h5>
-            <% if (currentUser.name == Job.author) { %>
+            <% if (currentUser && currentUser.name == Job.author) { %>
             <a href="/job/<%= Job.id %>/edit">Edit</a>
             <% } %>
         </div>
