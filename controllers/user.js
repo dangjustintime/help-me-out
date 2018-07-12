@@ -157,6 +157,15 @@ router.put("/:id", (request, response) => {
     });
 });
 
+// add balance route
+router.put("/:id/addBalance", (request, response) => {
+    request.session.currentUser.balance+=Number(request.body.amount);
+    User.findByIdAndUpdate(request.params.id,
+        { $inc: { balance: +request.body.amount } }, (error, UpdatedUser) => {
+        response.redirect("/");
+    });
+});
+
 // delete route
 router.delete("/:id", (request, response) => {
     User.findByIdAndDelete(request.params.id, (error, currentUser) => {
