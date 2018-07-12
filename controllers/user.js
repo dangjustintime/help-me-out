@@ -15,6 +15,7 @@ router.get("/", (request, response) => {
     });
 });
 
+/*
 // seed route
 router.get("/seed", async (request, response) => {
     const newUsers = [
@@ -116,6 +117,7 @@ router.get("/seed", async (request, response) => {
         response.send(error.message);
     }
 });
+*/
 
 // create route
 router.get("/new", (request, response) => {
