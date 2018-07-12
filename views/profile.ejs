@@ -4,28 +4,22 @@
     <body>
         <% include ./partials/nav.ejs %>
         <div class="container">
-            <img alt="Profile Pic" src="<%= User.profilePic %>">
-            <h1><%= User.name %></h1>
-            <h3>Email: <%= User.email %></h3>
-            <h3>Location: <%= User.location %></h3>
+            <div class="container row">
+                <img class="col s3" alt="Profile Pic" src="<%= User.profilePic %>">
+                <div class="col s9">
+                    <h3><%= User.name %></h3>
+                    <h6>Email: <%= User.email %></h6>
+                    <h6>Location: <%= User.location %></h6>
+                </div>
+            </div>
             <h4>Skills</h4>
-            <ul>
-                <% for (let i = 0; i < User.skills.length; i++) { %>
-                <li><%= User.skills[i] %></li>
-                <% } %>
-            </ul>
-            <h4>Jobs Asked</h4>
-            <ul>
-                <% for (let i = 0; i < User.jobsAsked.length; i++) { %>
-                <li><%= User.jobsAsked[i] %></li>
-                <% } %>
-            </ul>
-            <h4>Jobs Done</h4>
-            <ul>
-                <% for (let i = 0; i < User.jobsDone.length; i++) { %>
-                <li><%= User.jobsDone[i] %></li>
-                <% } %>
-            </ul>
+            <div class="container">
+                <ul>
+                    <% for (let i = 0; i < User.skills.length; i++) { %>
+                    <li><%= User.skills[i] %></li>
+                    <% } %>
+                </ul>
+            </div>
         </div>
     </body>
 </html>
