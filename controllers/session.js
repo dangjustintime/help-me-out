@@ -8,6 +8,7 @@ router.post("/", (request, response) => {
     User.findOne({ email: request.body.email }, (error, foundUser) => {
         if (bcrypt.compareSync(request.body.password, foundUser.password)) {
             request.session.currentUser = foundUser;
+            console.log(foundUser);
             response.redirect("/");
         } else {
             response.send("wrong password");

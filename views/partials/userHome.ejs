@@ -1,12 +1,13 @@
 <div class="container">
     <h4 class="center">Welcome <%= currentUser.name %>!!!</h4>
     <div class="container row">
-        <div class="col s8">
-            <h2 class="center">
-                Current Balance: $<%= currentUser.balance %>
-            </h2>
+        <div class="col s3">
+            <img class="center" width=150px src="<%= currentUser.profilePic %>">
         </div>
-        <div class="col s4">
+        <div class="col s9">
+            <h4 class="center">
+                Current Balance: $<%= currentUser.balance %>
+            </h4>
             <form action="/user/<%= currentUser._id %>/addBalance?_method=PUT" method="POST">
                 <input type="number" name="amount">
                 <input type="submit" value="ADD BALANCE">
