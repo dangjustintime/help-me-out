@@ -12,7 +12,7 @@
                     <div class="row">
                         <div class="card">
                             <div class="card-image">
-                                <img src="<%= Jobs[i].img%>">
+                                <img height=300px src="<%= Jobs[i].img%>">
                                 <span class="card-title"><%= Jobs[i].title %></span>
                             </div>
                             <div class="card-content">
@@ -21,10 +21,10 @@
                                 <p>Author: <%= Jobs[i].author %></p>
                             </div>
                             <div class="card-action">
-                                <form action="/job/<%= Jobs[i].id %>/helpOut?_method=PUT" method="POST">
+                                <a href="/job/<%= Jobs[i].id %>">More</a>
+                                <form class="right" action="/job/<%= Jobs[i].id %>/helpOut?_method=PUT" method="POST">
                                     <input type="submit" value="Help Out">
                                 </form>
-                                <a class="btn right" href="/job/<%= Jobs[i].id %>">More</a>
                             </div>
                         </div>
                     </div>
