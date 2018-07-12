@@ -187,7 +187,8 @@ router.delete("/:id", (request, response) => {
             console.log("Deleting User...");
         }
     });
-    response.redirect("/user");
+    request.session.destroy();
+    response.redirect("/");
 });
 
 module.exports = router;
